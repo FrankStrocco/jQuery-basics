@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title>jQuery events - review</title>
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script>
+            $(function() {
+                $('article').css({
+                    borderBottom: 'solid 1px #444',
+                    marginBottom: '1rem',
+                    padding: '.5rem'
+                });
+
+                $('article h3').hover(function() {
+                    $(this).toggleClass('highlight');
+                    $('header h1').addClass('highlight').css('color', '#c0f01a');
+                }, function() {
+                    $(this).toggleClass('highlight');
+                    $('header h1').removeClass('highlight').css('color', '#333');
+                })
+
+
+            }) // end doc ready
+        </script>
+
+    </head>
+    <body>
+        <!-- section>header>h1{hello}+h2{Happy Monday}^article*3>h3+p>lorem -->
+        <section>
+            <header>
+                <h1>Hello</h1>
+                <h2>jQuery is not loaded yet</h2>
+            </header>
+            <article>
+                <h3>Subheading 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, quaerat culpa, ratione nemo error eaque iusto quia iure voluptatum, dolores distinctio facilis sint accusantium quos molestias quam? Obcaecati, dolore, eveniet.</p>
+                <button>Make it stand out</button>
+            </article>
+            <article>
+                <h3>Subheading 2</h3>
+                <p>Earum voluptatum culpa voluptates eveniet ratione voluptas asperiores modi laudantium beatae nostrum non, quam ullam, explicabo eius illo maxime ea voluptate veritatis sunt, fugiat, aperiam ab velit. Fugit, doloribus, expedita.</p>
+            </article>
+            <article>
+                <h3>Regular heading</h3>
+                <p>Perferendis exercitationem mollitia accusamus atque repellat rem repellendus omnis, rerum deleniti quidem ab quisquam nemo laudantium enim ipsam quas labore suscipit eligendi recusandae, harum eaque nulla ipsum vitae fugiat. Voluptate.</p>
+            </article>
+        </section>
+    </body>
+</html>
