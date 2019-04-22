@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <title>jQuery show hide</title>
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <style>
+
+        </style>
+        <script>
+            $(function() {
+                $('.hide').click(function() {
+                    $('p.speedy').hide(50);
+                    $('p.regular').hide();
+                    $('p.fast').hide('fast');
+                    $('p.slow').hide('slow');
+                    $('p.snail').hide(2000);
+                });
+                $('.show').click(function() {
+                    $('p.speedy').show(50);
+                    $('p.regular').show();
+                    $('p.fast').show('fast');
+                    $('p.slow').show('slow');
+                    $('p.snail').show(2000);
+                })
+            }) // end doc ready
+        </script>
+
+    </head>
+    <body>
+        <!-- section>header>h1{hello}+h2{Happy Monday}^article*3>h3+p>lorem -->
+        <section>
+            <header>
+                <h1>Hello</h1>
+            </header>
+            <article>
+                <button class="hide">paragraphs</button>
+                <button class="show">paragraphs</button>
+                <br><br>
+                <p class="speedy">This paragraph will show/hide very quickly</p>
+                <p class="regular">This paragraph will show/hide at default speed</p>
+                <p class="fast">This paragraph will show/hide at fast speed</p>
+                <p class="slow">This paragraph will show/hide at slow speed</p>
+                <p class="snail">This paragraph will show/hide at snail speed</p>
+            </article>
+
+        </section>
+    </body>
+</html>
