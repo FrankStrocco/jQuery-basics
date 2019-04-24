@@ -3,39 +3,23 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
-        <title>jQuery Animate</title>
+        <title>jQuery 12 getters / setters</title>
         <link rel="stylesheet" href="css/main.css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script>
             $(function() {
                 $('.b1').click(function() {
-                    $('.box').stop().slideToggle(1000);
+                    var myString = $('p.bonus').text();
+                    alert(myString);
                 })
-
-
-
-
+                $('.b2').click(function() {
+                    var myString = $('p.bonus').html();
+                    $('.display').text(myString);
+                })
             });// end doc ready
         </script>
         <style>
-            .box{
-                background-color: yellowgreen;
-                color: #fff;
-                border: solid 3px blue;
-                width: 100px;
-                height: 100px;
-                margin: 10px;
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .b1 {
-                background-color: yellowgreen;
-                color: #fff;
-                border: solid 2px blue;
-            }
 
         </style>
 
@@ -47,11 +31,14 @@
                 <h1>Hello.</h1>
             </header>
             <article>
-                <button class="b1">Start</button>
-
+                <button class="b1">Get all the paragraph text</button>
+                <button class="b2">Get paragraph text</button>
                 <br>
                 <br>
-                <div class="box">1</div>
+                <p>This is the first pargraph</p>
+                <p>This is the second paragraph </p>
+                <p class="bonus">This is the <strong>third</strong> paragraph</p>
+                <p class="display"></p>
             </article>
 
 

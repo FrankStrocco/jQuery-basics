@@ -3,49 +3,95 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
-        <title>jQuery form Submit events</title>
+        <title>jQuery Animate</title>
         <link rel="stylesheet" href="css/main.css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <style>
-
-        </style>
         <script>
             $(function() {
-                $('form').submit(function() {
-                    var regex = /^[a-zA-Z]+$/;
-                    var nameVal = $('#fName').val();
-
-                    if(regex.test(nameVal) == false){
-                        $('#msg').text('You have made an error, please enter your name, YO!').show().fadeOut(2000);
-                    } else {
-                        $('#greeting').html('You\'ve entered ' + nameVal);
-                    }
-                    event.preventDefault();
+                $('.b1').click(function() {
+                    // animate method: $(selector).animate({paroperty:values,...}duration, callback);
+                    $('.c1').animate({
+                        width: 200,
+                        height: 200,
+                        borderRadius: 0,
+                        marginLeft: 400, // inorder to animate position properties, you need to initially set the position in style tags.. relative
+                        top: 350
+                    }, 2000)
+                })
+                $('.b2').click(function() {
+                    // animate method: $(selector).animate({paroperty:values,...}duration, callback);
+                    $('.c2').animate({
+                        marginLeft: 350
+                    }).animate({
+                        top: 325
+                    })
+                });
+                $('.b3').click(function() {
+                    $('.c3').animate({
+                        top: '+=30px',
+                        left: '+=30px',
+                        width: '+=10px',
+                        height: '+=10px'
+                    });
+                })
+                $('.b4').click(function() {
+                    $('.c4').animate({
+                        width: 'toggle',
+                        height: 'toggle',
+                        border: 'toggle'
+                    });
                 })
             }) // end doc ready
         </script>
+        <style>
+            .circle {
+                background-color: #7ac4ea;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .c3 {
+                background-color: yellowgreen;
+                color: #fff
+            }
+            .c1 {
+                background-color: red;
+                color: #fff
+            }
+            .c4 {
+                background-color: yellow;
+                color: green;
+                border: solid 2px blue;
+            }
+
+
+        </style>
 
     </head>
     <body>
         <!-- section>header>h1{hello}+h2{Happy Monday}^article*3>h3+p>lorem -->
         <section>
             <header>
-                <h1>Hello</h1>
+                <h1>Hello.</h1>
             </header>
             <article>
-                <h3>Subheading 1</h3>
-                <form action="" >
-                    <label for="fName">Frist Name:
-                        <input type="text" id="fName" name="first name">
-                    </label>
-                    <input type="submit" value="Submit this">
-
-                </form>
-                <p id="msg"></p>
-                <h3 id="greeting"></h3>
-
+                <button class="b1">Start Animation 1</button>
+                <button class="b2">Start Animation 2</button>
+                <button class="b3">Click me</button>
+                <button class="b4">Click me too</button>
+                <br>
+                <br>
+                <div class="circle c1">1</div>
+                <div class="circle c2">2</div>
+                <div class="circle c3">3</div>
+                <div class="circle c4">4</div>
             </article>
+
 
         </section>
     </body>

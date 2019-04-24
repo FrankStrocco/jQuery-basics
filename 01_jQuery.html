@@ -3,21 +3,20 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
-        <title>jQuery example 1 - review</title>
+        <title>jQuery show hide</title>
         <link rel="stylesheet" href="css/main.css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script>
-            $(document).ready(function() {
-                $('article').css({
-                    borderBottom: 'solid 1px #444',
-                    marginBottom: '1rem',
-                    padding: '.5rem'
-                });
-                $('article:last').css('border-bottom', 'none');
-                $('article:even').css('background-color', '#ccc');
-                $('article:nth-of-type(1)').css('color', '#069');
-        }) // end doc ready
+            $(function() {
+                $('.toggle').click(function() {
+                    $('.speedy').toggle(50);
+                    $('.regular').toggle();
+                    $('.fast').toggle('fast');
+                    $('.slow').toggle('slow');
+                    $('.snail').toggle(1500);
+                })
+            }) // end doc ready
         </script>
 
     </head>
@@ -25,21 +24,19 @@
         <!-- section>header>h1{hello}+h2{Happy Monday}^article*3>h3+p>lorem -->
         <section>
             <header>
-                <h1>hello</h1>
-                <h2>Happy Monday</h2>
+                <h1>Hello</h1>
             </header>
             <article>
-                <h3></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, quaerat culpa, ratione nemo error eaque iusto quia iure voluptatum, dolores distinctio facilis sint accusantium quos molestias quam? Obcaecati, dolore, eveniet.</p>
+
+                <button class="toggle">toggle paragraphs</button>
+                <br><br>
+                <p class="speedy">This paragraph will show/hide very quickly</p>
+                <p class="regular">This paragraph will show/hide at default speed</p>
+                <p class="fast">This paragraph will show/hide at fast speed</p>
+                <p class="slow">This paragraph will show/hide at slow speed</p>
+                <p class="snail">This paragraph will show/hide at snail speed</p>
             </article>
-            <article>
-                <h3></h3>
-                <p>Earum voluptatum culpa voluptates eveniet ratione voluptas asperiores modi laudantium beatae nostrum non, quam ullam, explicabo eius illo maxime ea voluptate veritatis sunt, fugiat, aperiam ab velit. Fugit, doloribus, expedita.</p>
-            </article>
-            <article>
-                <h3></h3>
-                <p>Perferendis exercitationem mollitia accusamus atque repellat rem repellendus omnis, rerum deleniti quidem ab quisquam nemo laudantium enim ipsam quas labore suscipit eligendi recusandae, harum eaque nulla ipsum vitae fugiat. Voluptate.</p>
-            </article>
+
         </section>
     </body>
 </html>

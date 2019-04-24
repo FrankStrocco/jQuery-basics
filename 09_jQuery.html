@@ -3,65 +3,76 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
-        <title>jQuery scroll events</title>
+        <title>jQuery Animate</title>
         <link rel="stylesheet" href="css/main.css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <style>
-            p {
-                padding: 50px 0;
-                text-align: center;
-                font-size: 4em;
-                background-color: yellowgreen;
-                margin-bottom: .5em;
-            }
-            #scrollMsg {
-                position: fixed;
-                top: 50px;
-                background-color: lightblue;
-                left: 0;
-                width: 100%;
-                background-color: ;
-                display: none;
-            }
-            #scrollMsg a {
-                text-decoration: none;
-                color: red;
-                font-size: 10px;
-                position: absolute;
-                top: 5px;
-                right: 5px;
-            }
-        </style>
         <script>
             $(function() {
-                $(window).scroll(function() {
-                    // $('#scrollMsg').show().fadeOut('slow');
-                    $('#scrollMsg').fadeIn();
+                // start animation
+                $('.b1').click(function() {
+                    $('.circle').animate({
+                        top: '+=50px'
+                    }, 1500)
+                }) // end Start
 
-                })
-                $('#scrollMsg a').click(function() {
-                    $('#scrollMsg').hide();
-                    event.preventDefault();
-                })
+                // stop animation
+                $('.b2').click(function() {
+                    $('.circle').stop();
+                }) // end stop
+
+                // back up animation
+                $('.b3').click(function() {
+                    $('.circle').animate({
+                        top: '-=50px'
+                    }, 1500)
+                }) // end stop
+
+                // reset animation
+                $('.b4').click(function() {
+                    $('.circle').animate({
+                        top: '0'
+                    }, 'fast')
+                }) // end stop
+
             }) // end doc ready
         </script>
+        <style>
+            .circle {
+                background-color: yellowgreen;
+                color: #fff;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .cAlt {
+                background-color: red;
+                color: #fff
+            }
+
+        </style>
 
     </head>
     <body>
         <!-- section>header>h1{hello}+h2{Happy Monday}^article*3>h3+p>lorem -->
         <section>
             <header>
-                <h1>Hello</h1>
+                <h1>Hello.</h1>
             </header>
             <article>
-                <p id="scrollMsg">You scrolled! <a href="#">(x)</a></p>
-                <p class="sections">scroll me</p>
-                <p class="sections">scroll me</p>
-                <p class="sections">scroll me</p>
-                <p class="sections">scroll me</p>
-                <p class="sections">scroll me</p>
+                <button class="b1">Start</button>
+                <button class="b2">Stop</button>
+                <button class="b3">Back</button>
+                <button class="b4">Reset</button>
+                <br>
+                <br>
+                <div class="circle c1">1</div>
             </article>
+
 
         </section>
     </body>

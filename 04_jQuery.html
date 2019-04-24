@@ -3,22 +3,16 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
-        <title>jQuery keyboard events</title>
+        <title>jQuery fadetoggle</title>
         <link rel="stylesheet" href="css/main.css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script>
             $(function() {
-                var i = 0;
-                $('input[type="text"]').keyup(function() {
-                    $('p span').text(i += 1);
-                    $('#results').text($(this).val());
-                    $('#feedback').text('You pressed it').css({
-                        backgroundColor: '#c0f01a',
-                        color: 'white',
-                        padding: '2px'
-                    }).show().fadeOut(3000);
+                $('.fader').click(function() {
+                    $('p').fadeToggle('slow');
                 })
+
             }) // end doc ready
         </script>
 
@@ -30,15 +24,14 @@
                 <h1>Hello</h1>
             </header>
             <article>
-                <h3>Subheading 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, quaerat culpa, ratione nemo error eaque iusto quia iure voluptatum, dolores distinctio facilis sint accusantium quos molestias quam? Obcaecati, dolore, eveniet.</p>
-                <p>
-                    <input type="text" placeholder="type something">
-                </p>
-                <p>Keypress: <span>0</span></p>
-                <p id="results"></p>
-                <p id="feedback"></p>
+                <button class="fader">Fade in/out</button>
+
+                <br>
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum quod culpa doloremque eum tempore, deserunt officia, rem, odit, quos molestiae voluptas autem pariatur sit reprehenderit ipsum eligendi hic. Officia, veniam.</p>
+                <p>Minus voluptas, porro unde totam sint laudantium facilis aut fugit fuga aliquid modi, autem sed maxime veritatis quaerat veniam. Beatae eaque natus quo provident nobis iure maxime commodi, ullam nam.</p>
             </article>
+
 
         </section>
     </body>
